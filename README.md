@@ -157,8 +157,8 @@ Items can be defined as any campaign elements that can be assigned to a player c
 
 # Technologies
 
-## Frontend: SvelteKit
+## Frontend: [SvelteKit](https://kit.svelte.dev/)
 
-## Backend: Tauri
+## Backend: [Tauri](https://tauri.app/)
 
-## Database & Auth: PostgreSQL
+## Database & Auth: [Supabase](https://supabase.com/) (PostgreSQL)
