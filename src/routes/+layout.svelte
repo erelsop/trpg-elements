@@ -11,9 +11,10 @@
   import { invalidate } from '$app/navigation';
   import { onMount } from 'svelte';
   import PageTransition from '$lib/components/PageTransition.svelte';
-  import '../app.css';
+  /** @type {import('./$types').LayoutData} */
+  export let data;
 
-  export let url;
+  import '../app.css';
 
   onMount(() => {
     const {
@@ -27,8 +28,8 @@
   });
 </script>
 
-<main class="container">
-  <PageTransition {url}>
+<main class="layout">
+  <PageTransition pathname={data.pathname}>
     <slot />
   </PageTransition>
 </main>

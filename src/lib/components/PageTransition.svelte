@@ -1,16 +1,13 @@
 <script lang="ts">
   import { fly } from 'svelte/transition';
-  export let url = '';
+  export let pathname: string = '';
 </script>
 
-<div class="transition-outer">
-  {#key url}
-    <div
-      class="transition-inner"
-      in:fly={{ y: -50, duration: 500, delay: 500 }}
-      out:fly={{ y: 50, duration: 500 }}
-    >
-      <slot />
-    </div>
-  {/key}
-</div>
+{#key pathname}
+  <div
+    in:fly={{ y: -10, duration: 500, delay: 500 }}
+    out:fly={{ y: 5, duration: 500 }}
+  >
+    <slot />
+  </div>
+{/key}

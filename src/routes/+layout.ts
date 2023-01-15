@@ -4,7 +4,10 @@ import { getSupabase } from '@supabase/auth-helpers-sveltekit';
 export const ssr = false;
 export const prerender = true;
 export const csr = true;
-export const load: LayoutLoad = async (event) => {
-  const { session } = await getSupabase(event);
-  return { session };
+
+/** @type {import('./$types').LayoutLoad} */
+export const load: import('./$types').LayoutLoad = async ({
+  url: { pathname },
+}) => {
+  return { pathname };
 };
