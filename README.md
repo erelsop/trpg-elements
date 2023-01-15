@@ -1,4 +1,4 @@
-![tRPG Elements Logo](https://raw.githubusercontent.com/erelsop/trpg-elements/adcc51db26bc46ce7d369b7320206673e2ef2f8c/src/lib/assets/splash-logo.svg)
+<p style="text-align: center;">![tRPG Elements Logo](https://raw.githubusercontent.com/erelsop/trpg-elements/adcc51db26bc46ce7d369b7320206673e2ef2f8c/src/lib/assets/splash-logo.svg)</p>
 
 # tRPG Elements
 
