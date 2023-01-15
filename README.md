@@ -1,7 +1,5 @@
 # tRPG Elements
 
-An open-source table-top role-playing game created with [Tauri](https://tauri.app/), [SvelteKit](https://kit.svelte.dev/), and [Supabase](https://supabase.com/). 
-
 ## Recommended IDE Setup
 
 [VS Code](https://code.visualstudio.com/) + [Svelte](https://marketplace.visualstudio.com/items?itemName=svelte.svelte-vscode) + [Tauri](https://marketplace.visualstudio.com/items?itemName=tauri-apps.tauri-vscode) + [rust-analyzer](https://marketplace.visualstudio.com/items?itemName=rust-lang.rust-analyzer).
