@@ -1,0 +1,77 @@
+:root {
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+
+  color: #161717;
+  background-color: #e5e9e8; 
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+:global(a),
+:global(button),
+:global(input),
+:global(p),
+:global(span) {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  font-weight: inherit;
+  color: inherit;
+  background-color: inherit;
+}
+
+:global(body) {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media prefers-dark-mode {
+  :global(body) {
+    background-color: #e5e9e8;
+    color: #161717;
+  }
+
+  :global(.primary-btn) {
+    background-color: rgb(103, 151, 134, 1);
+    color: #e5e9e8;
+    box-shadow: 0 0 0 6px rgba(0, 0, 0, 0.1);
+  }
+
+  :global(.primary-btn:active) {
+    background-color: rgb(103, 151, 134, 0.6);
+    box-shadow: none;
+  }
+
+  :global(.alt-primary-btn) {
+    background-color: rgb(103, 151, 134, 1);
+    color: #e5e9e8;
+    box-shadow: 0 0 0 6px rgba(0, 0, 0, 0.1);
+  }
+
+  :global(.alt-primary-btn:active) {
+    background-color: rgb(103, 151, 134, 0.6);
+    box-shadow: none;
+  }
+
+  :global(.alt-symbol-btn) {
+    color: rgb(103, 151, 134, 1);
+    text-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+  }
+
+  :global(.alt-symbol-btn:active) {
+    color: rgb(103, 151, 134, 0.6);
+    text-shadow: none;
+  }
+}
