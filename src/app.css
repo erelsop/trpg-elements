@@ -5,7 +5,7 @@
   font-weight: 400;
 
   color: #161717;
-  background-color: #e5e9e8; 
+  background-color: #e5e9e8;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -41,37 +41,5 @@
   :global(body) {
     background-color: #e5e9e8;
     color: #161717;
-  }
-
-  :global(.primary-btn) {
-    background-color: rgb(103, 151, 134, 1);
-    color: #e5e9e8;
-    box-shadow: 0 0 0 6px rgba(0, 0, 0, 0.1);
-  }
-
-  :global(.primary-btn:active) {
-    background-color: rgb(103, 151, 134, 0.6);
-    box-shadow: none;
-  }
-
-  :global(.alt-primary-btn) {
-    background-color: rgb(103, 151, 134, 1);
-    color: #e5e9e8;
-    box-shadow: 0 0 0 6px rgba(0, 0, 0, 0.1);
-  }
-
-  :global(.alt-primary-btn:active) {
-    background-color: rgb(103, 151, 134, 0.6);
-    box-shadow: none;
-  }
-
-  :global(.alt-symbol-btn) {
-    color: rgb(103, 151, 134, 1);
-    text-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
-  }
-
-  :global(.alt-symbol-btn:active) {
-    color: rgb(103, 151, 134, 0.6);
-    text-shadow: none;
   }
 }

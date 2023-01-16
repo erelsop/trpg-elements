@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { onMount } from 'svelte';
   import { supabase } from '$lib/supabaseClient';
   import logo from '$lib/assets/splash-logo.svg';
 
@@ -6,23 +7,46 @@
   let email: string = '';
   let password: string = '';
 
-  async function signInWithEmail() {
-    // @ts-ignore
-    const { data, error } = await supabase.auth
-      .signInWithPassword({
+  let inputFields: any;
+  let errorSpan: HTMLSpanElement | null;
+
+  async function signInWithPassword() {
+    const { data, error } =
+      await supabase.auth.signInWithPassword({
         email: email,
         password: password,
-      })
-      .then((response) => {
-        console.log(response);
       });
+    if (error) {
+      errorSpan!.textContent =
+        'Having trouble? Click forgot password to update your password.';
+    } else {
+      window.location.href = '/campaigns';
+    }
   }
+
+  onMount(() => {
+    errorSpan = document.querySelector(
+      '.error-message__text'
+    );
+    inputFields = document.querySelectorAll('.inputField');
+    inputFields.forEach((inputField: HTMLInputElement) => {
+      inputField.addEventListener(
+        'keyup',
+        (e: KeyboardEvent) => {
+          if (e.key === 'Enter') {
+            e.preventDefault();
+            signInWithPassword();
+          }
+        }
+      );
+    });
+  });
 </script>
 
 <div id="login">
   <form
     id="login__form"
-    on:submit|preventDefault={signInWithEmail}
+    on:submit|preventDefault={signInWithPassword}
   >
     <div class="login__logo">
       <img
@@ -45,15 +69,6 @@
         bind:value={password}
       />
     </div>
-    <div>
-      <input
-        type="submit"
-        class="button block"
-        value={loading ? 'Loading' : 'Sign In'}
-        disabled={loading}
-        hidden
-      />
-    </div>
   </form>
   <div class="text-center">
     <a
@@ -64,6 +79,9 @@
       href="/forgot-password"
       class="secondary-link">Forgot password?</a
     >
+  </div>
+  <div class="error-message">
+    <span class="error-message__text" />
   </div>
 </div>
 
@@ -137,17 +155,13 @@
     margin-bottom: 1rem;
   }
 
-  #login__form > div > input[type='submit'] {
-    margin-top: 1rem;
-  }
-
   .text-center {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     width: 200px;
-    margin-top: -1rem;
+    margin-top: -0.5rem;
   }
 
   .primary-link,
@@ -179,5 +193,22 @@
     color: rgba(197, 155, 159, 0.8);
     text-shadow: 0 0 6px rgb(103, 151, 134, 0.1);
     transition: color 0.4 ease-in-out;
+  }
+
+  .error-message {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 260px;
+    margin-top: 1rem;
+  }
+
+  .error-message__text {
+    color: rgba(197, 155, 159, 1);
+    font-size: 0.8rem;
+    font-weight: bolder;
+    text-shadow: 0 0 6px rgb(103, 151, 134, 0.1);
+    text-align: center;
   }
 </style>

@@ -3,20 +3,16 @@
   import logo from '$lib/assets/splash-logo.svg';
 
   let loading = false;
-  let username: string = '';
   let email: string = '';
   let password: string = '';
 
   async function signUpWithEmail() {
     // @ts-ignore
-    const { data, error } = await supabase.auth
-      .signUp({
-        email: email,
-        password: password,
-      })
-      .then((response) => {
-        console.log(response);
-      });
+    const { data, error } = await supabase.auth.signUp({
+      email: email,
+      password: password,
+    });
+    window.location.href = '/';
   }
 
   function handleGoBack() {
@@ -41,7 +37,7 @@
       <input
         class="inputField"
         type="text"
-        placeholder="Username"
+        placeholder="Email"
         bind:value={email}
       />
       <input
@@ -68,6 +64,11 @@
         }}
       />
       <input
+        on:keypress={(e) => {
+          if (e.key === 'Enter') {
+            signUpWithEmail();
+          }
+        }}
         type="submit"
         class="primary-btn"
         value={loading ? 'Loading' : 'Sign Up'}
