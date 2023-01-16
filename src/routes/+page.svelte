@@ -4,10 +4,6 @@
   import Auth from '$lib/components/Auth.svelte';
 </script>
 
-<!--
-    Splash screen will show for
-    2 seconds before loading Auth
--->
 {#if !$page.data.session}
   <Auth />
 {:else}
