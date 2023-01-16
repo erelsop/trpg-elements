@@ -21,7 +21,8 @@
     if (error) {
       info!.textContent = error.message;
     } else {
-      info!.textContent = 'Check your email for the link!';
+      info!.textContent =
+        'Password reset link sent! Check your email for access.';
       setTimeout(() => {
         window.history.back();
       }, 3000);
@@ -64,26 +65,16 @@
           console.log('click');
           handleGoBack();
         }}
-        on:keypress={(e) => {
-          // go back to reset page
-          console.log('keypress');
-          handleGoBack();
-        }}
       />
       <input
-        on:click={(e) => {
-          // go back to reset page
-          console.log('click');
-          resetPassword();
-        }}
         type="submit"
         class="primary-btn"
         value={loading ? 'Loading' : 'Send Reset Link'}
         disabled={loading}
       />
     </div>
-    <span class="info" />
   </form>
+  <span class="info" />
 </div>
 
 <style>
@@ -193,20 +184,10 @@
 
   .info {
     text-align: center;
-  }
-
-  .error,
-  .success {
-    margin-top: 1rem;
+    color: rgba(103, 151, 134, 1);
     font-size: 14px;
     font-weight: 700;
-  }
-
-  .error {
-    color: rgba(197, 155, 159, 1);
-  }
-
-  .success {
-    color: rgb(103, 151, 134, 1);
+    margin-top: 1rem;
+    text-shadow: 0 0 6px rgba(22, 23, 23, 0.1);
   }
 </style>
