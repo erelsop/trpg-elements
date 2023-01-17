@@ -37,6 +37,35 @@
   align-items: center;
 }
 
+.primary-btn {
+  background: rgb(103, 151, 134, 1);
+  color: #e5e9e8;
+  width: 189px;
+  height: 59px;
+  border-radius: 6px;
+  border: none;
+  box-shadow: 0 0 6px rgba(22, 23, 23, 0.2);
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 24px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+a.primary-btn {
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.primary-btn:active {
+  background: rgb(103, 151, 134, 0.8);
+  color: #e5e9e8;
+  font-weight: 700;
+  box-shadow: none;
+}
+
 @media prefers-dark-mode {
   :global(body) {
     background-color: #e5e9e8;

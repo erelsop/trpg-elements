@@ -1,4 +1,5 @@
 <script context="module">
+  import TopBar from '$lib/components/TopBar.svelte';
   // @ts-nocheck
   /** @type {import('@sveltejs/kit').Load} */
   export const load = async ({ url }) => ({
@@ -29,6 +30,7 @@
 </script>
 
 <main class="layout">
+  <TopBar />
   <PageTransition pathname={data.pathname}>
     <slot />
   </PageTransition>
