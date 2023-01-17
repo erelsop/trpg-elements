@@ -37,6 +37,16 @@
   align-items: center;
 }
 
+.hidden {
+  pointer-events: none;
+  opacity: 0.4;
+  -webkit-filer: blur(3px);
+  filter: blur(3px);
+  box-shadow: none;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
 .primary-btn {
   background: rgb(103, 151, 134, 1);
   color: #e5e9e8;

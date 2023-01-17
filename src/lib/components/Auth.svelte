@@ -2,8 +2,8 @@
   import { onMount } from 'svelte';
   import { supabase } from '$lib/supabaseClient';
   import logo from '$lib/assets/splash-logo.svg';
+  import { goto } from '$app/navigation';
 
-  let loading = false;
   let email: string = '';
   let password: string = '';
 
@@ -20,7 +20,10 @@
       errorSpan!.textContent =
         'Having trouble? Click forgot password to update your password.';
     } else {
-      window.location.href = '/campaigns';
+      document
+        .getElementById('top-bar')!
+        .classList.remove('hidden');
+      goto('/campaigns');
     }
   }
 

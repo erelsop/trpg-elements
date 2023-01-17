@@ -57,6 +57,7 @@
     </div>
     <div class="reset__btns">
       <input
+        type="button"
         class="secondary-btn"
         value={loading ? 'Loading' : 'Go Back'}
         disabled={loading}
@@ -142,7 +143,6 @@
     flex-direction: row !important;
     justify-content: center;
     align-items: center;
-    width: 300px;
     column-gap: 10px;
   }
 
@@ -153,8 +153,9 @@
     font-weight: 700;
     box-shadow: 0 0 6px rgba(22, 23, 23, 0.2);
     text-transform: uppercase;
-    width: 45%;
     cursor: pointer;
+    height: 33px;
+    width: 159px;
   }
   #reset .primary-btn:active {
     background: rgb(103, 151, 134, 0.8);
@@ -171,8 +172,8 @@
     font-weight: 700;
     box-shadow: 0 0 6px rgba(22, 23, 23, 0.2);
     text-transform: uppercase;
-    width: 30%;
     cursor: pointer;
+    width: 159px;
   }
   #reset .secondary-btn:active {
     background: rgba(197, 155, 159, 0.8);

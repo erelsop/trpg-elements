@@ -1,7 +1,7 @@
 <script lang="ts">
   import { onMount } from 'svelte';
-  import { supabase } from '$lib/supabaseClient';
   import { page } from '$app/stores';
+  import { goto } from '$app/navigation';
 
   const menu = [
     { name: 'campaigns', href: '/campaigns' },
@@ -11,18 +11,31 @@
   ];
 
   $: currentPage = $page.url.pathname;
+
+  onMount(() => {
+    if (currentPage === '/') {
+      document
+        ?.getElementById('top-bar')
+        ?.classList.add('hidden');
+    }
+  });
 </script>
 
 <div id="top-bar">
   <div id="top-bar-left">
-    {#each menu as {href, name}}
-      <a class:active={href === currentPage}
-        href={href}>{name}</a>
+    {#each menu as { href, name }}
+      <a
+        class:active={href === currentPage}
+        {href}
+        on:click|preventDefault={() => goto(href, { replaceState: true  })}
+      >
+        {name}
+      </a>
     {/each}
   </div>
   <div id="top-bar-right">
-    <button class="dice-ico" />
-    <button class="gear-ico" />
+    <button class="dice-ico top-link" />
+    <button class="gear-ico top-link" />
   </div>
 </div>
 
@@ -47,6 +60,7 @@
     padding: 1rem 2rem;
     background-color: var(--color-white);
     box-shadow: 0 0px 4px rgba(0, 0, 0, 0.3);
+    transition: 0.2s ease-in-out;
   }
 
   #top-bar-left {
