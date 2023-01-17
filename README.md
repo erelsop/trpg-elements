@@ -63,8 +63,6 @@ The location view dashboard is geared more towards a dynamic and open-ended camp
 
 When selecting a location, the planner will see all game element groups tied to this location organized into cards with some quick facts about the elements present in each group. All campaign elements can be toggled as quick facts for each group within a location. A roadmap of player progress within the sequence is shown at the top of the main dashboard in location view.
 
-— Campaign has many chapters and chapters have one campaign
-
 ## Relationships
 
 — Campaign has many world locations not tied to chapters and world locations have many campaigns
