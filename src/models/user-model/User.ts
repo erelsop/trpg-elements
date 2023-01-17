@@ -12,7 +12,7 @@ export class User {
     let id = await this.getUserId();
     const { data, error } = await supabase
       .from('campaigns')
-      .select('data')
+      .select()
       .eq('user_id', id);
 
     if (error) {

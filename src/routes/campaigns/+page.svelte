@@ -6,7 +6,7 @@
 
   let user: User;
   let id: string;
-  let campaigns: any;
+  let campaigns: any = [];
 
   onMount(async () => {
     const { error } = await supabase.auth.getUser();
@@ -16,8 +16,9 @@
     user = new User();
     id = await user.id;
     campaigns = await user.campaigns;
-    console.log(id);
-    console.log(campaigns);
+    campaigns = campaigns.map((campaign: any) => {
+      return [campaign.id, campaign.data];
+    });
   });
 </script>
 
@@ -25,8 +26,17 @@
   <div id="campaign-header">
     <a
       href="/campaigns/new"
-      class="primary-btn">+ element</a
+      class="primary-btn">+ campaign</a
     >
+  </div>
+  <div id="campaign-list">
+    {#each campaigns as campaign, i}
+      <a href="/campaigns/{campaign.id}">
+        <div class="campaign-card">
+          <h3>{campaign[1][0].name}</h3>
+        </div>
+      </a>
+    {/each}
   </div>
 </div>
 

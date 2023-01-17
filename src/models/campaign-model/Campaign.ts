@@ -2,6 +2,7 @@
 // import type { Chapter } from '../chapter-model/Chapter';
 // import type { Location } from '../location-model/Location';
 import { supabase } from '$lib/supabaseClient';
+import UUID from 'uuid-js';
 
 /**
  * @class Campaign
@@ -9,28 +10,47 @@ import { supabase } from '$lib/supabaseClient';
  * @type {CampaignType}
  */
 export class Campaign {
-  name: string;
-  data: JSON;
-  constructor(name: string) {
-    this.name = name;
-    this.data = JSON.parse('');
+  userId: Promise<string>;
+  data: JSON | null;
+  campaignId: string;
+  constructor() {
+    this.userId = this.getUserId();
+    // campaignId is a random string
+    this.campaignId = UUID.create().toString();
+    // @ts-ignore
+    this.data = {};
   }
 
   async initCampaign() {
+    // @ts-ignore
+    this.data = [
+      {
+        id: this.campaignId,
+        name: 'New Campaign',
+      }
+    ];
     const { error } = await supabase
       .from('campaigns')
-      .insert([{ data: this.data }]);
+      .insert([
+        {
+          id: this.campaignId,
+          data: this.data,
+          user_id: await this.userId,
+        },
+      ]);
     if (error) {
       console.log(error);
     } else {
       console.log('Campaign created');
     }
   }
+
+  async getUserId() {
+    const {
+      data: { session },
+    } = await supabase.auth.getSession();
+    // @ts-ignore
+    const { user } = session;
+    return user.id;
+  }
 }
-
-export type CampaignType = {
-  name: string;
-  data: JSON;
-
-  initCampaign: () => void;
-};

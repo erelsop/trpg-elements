@@ -199,6 +199,11 @@
   dependencies:
     "@types/node" "*"
 
+"@types/uuid-js@^0.7.3":
+  "integrity" "sha512-EKeH4Cg0zc/knney9/GYEWYdPO0l4hAqdXPd1/5biAfILTtwJCXE6lWyJJsV3OG1UKlZSwnwPLW8ejPnsDTfnw=="
+  "resolved" "https://registry.npmjs.org/@types/uuid-js/-/uuid-js-0.7.3.tgz"
+  "version" "0.7.3"
+
 "anymatch@~3.1.2":
   "integrity" "sha512-KMReFUr0B4t+D+OBkjR3KYqvocp2XaSzO55UcB6mgQMd3KbcE+mWTyvVV7D/zsdEbNnV6acZUutkiHQXvTr1Rw=="
   "resolved" "https://registry.npmjs.org/anymatch/-/anymatch-3.1.3.tgz"
@@ -899,6 +904,11 @@
   "version" "5.0.10"
   dependencies:
     "node-gyp-build" "^4.3.0"
+
+"uuid-js@^0.7.5":
+  "integrity" "sha512-lJFducSMfVDO3E1wBe/zflgU25JbpX9KfF+g0k6OxIt9xeybdZd27n75vPg+4cLN55UKGjJ46w3K3q3l+8KgkQ=="
+  "resolved" "https://registry.npmjs.org/uuid-js/-/uuid-js-0.7.5.tgz"
+  "version" "0.7.5"
 
 "vite@^3.0.0 || ^4.0.0", "vite@^4.0.0":
   "integrity" "sha512-xevPU7M8FU0i/80DMR+YhgrzR5KS2ORy1B4xcX/cXLsvnUWvfHuqMmVU6N0YiJ4JWGRJJsLCgjEzKjG9/GKoSw=="
