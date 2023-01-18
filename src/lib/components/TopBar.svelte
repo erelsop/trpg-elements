@@ -58,9 +58,14 @@
     justify-content: space-between;
     align-items: center;
     padding: 1rem 2rem;
-    background-color: var(--color-white);
+    background-color: var(--background);
     box-shadow: 0 0px 4px rgba(0, 0, 0, 0.3);
     transition: 0.2s ease-in-out;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
   }
 
   #top-bar-left {

@@ -6,6 +6,7 @@
 
   color: #161717;
   background-color: #e5e9e8;
+  overflow: scroll;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -35,6 +36,15 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow-y: scroll;
+}
+
+:global(body::-webkit-scrollbar) {
+  width: 0.1rem;
+}
+
+:global(body::-webkit-scrollbar-track) {
+  background: var(--background-color);
 }
 
 .hidden {

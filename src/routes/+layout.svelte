@@ -29,9 +29,16 @@
   });
 </script>
 
+<TopBar />
 <main class="layout">
-  <TopBar />
   <PageTransition pathname={data.pathname}>
     <slot />
   </PageTransition>
 </main>
+
+<style>
+  .layout {
+    margin-top: 6rem;
+    padding: 0 2rem;
+  }
+</style>
