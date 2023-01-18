@@ -79,23 +79,6 @@
     line-height: 12px;
   }
 
-  #campaign-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 100%;
-  }
-
-  #create-campaign-card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-  }
-
   .fill-screen {
     display: flex;
     flex-direction: column;
@@ -104,6 +87,15 @@
     width: 100%;
     height: 100vh;
     padding-top: 0 !important;
+  }
+
+  #campaign-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 98%;
+    margin: 0 auto;
   }
 
   #campaign-list {
@@ -116,16 +108,14 @@
     justify-items: center;
     align-items: center;
     width: 100%;
-    padding-top: 2rem;
   }
 
-  .create-campaign {
+  #create-campaign-card {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    border: none;
-    border-radius: 0.5rem;
+    width: 100%;
   }
 
   .campaign-card {
@@ -138,6 +128,15 @@
     border: none;
     border-radius: 0.5rem;
     box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.3);
+  }
+
+  .create-campaign {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 0.5rem;
   }
 
   .campaign-card__header {
@@ -153,7 +152,6 @@
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
-    overflow: hidden;
   }
 
   .campaign-card__description p {
@@ -165,6 +163,7 @@
     scrollbar-width: 0 !important;
     overflow: -moz-scrollbars-none;
     -ms-overflow-style: none;
+    overscroll-behavior: none;
   }
 
   p::-webkit-scrollbar {

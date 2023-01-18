@@ -27,15 +27,24 @@
       <a
         class:active={href === currentPage}
         {href}
-        on:click|preventDefault={() => goto(href, { replaceState: true  })}
+        on:click|preventDefault={() => {
+          goto(href, { replaceState: true });
+        }}
       >
         {name}
       </a>
     {/each}
   </div>
   <div id="top-bar-right">
-    <button class="dice-ico top-link" />
-    <button class="gear-ico top-link" />
+    <button
+      class="dice-ico top-link"
+      id="dice"
+    />
+    <button
+      id="settings"
+      class="gear-ico top-link"
+      on:click={() => goto('/settings')}
+    />
   </div>
 </div>
 
@@ -133,6 +142,10 @@
   .gear-ico:hover {
     transform: scale(1.1);
     animation: spin 1s linear infinite;
+  }
+
+  :global(.iconSpin) {
+    animation: spin 0.5s linear;
   }
 
   /* Animations */

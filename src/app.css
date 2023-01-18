@@ -6,7 +6,8 @@
 
   color: #161717;
   background-color: #e5e9e8;
-  overflow: scroll;
+  box-sizing: border-box;
+  overflow-y: scroll;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -15,36 +16,17 @@
   -webkit-text-size-adjust: 100%;
 }
 
-:global(a),
-:global(button),
-:global(input),
-:global(p),
-:global(span) {
-  font-family: inherit;
-  font-size: inherit;
-  line-height: inherit;
-  font-weight: inherit;
-  color: inherit;
-  background-color: inherit;
+::-webkit-scrollbar {
+    width: 8px;
 }
 
-:global(body) {
-  width: 100vw;
-  height: 100vh;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow-y: scroll;
+::-webkit-scrollbar-thumb {
+  background-color: rgba(22, 23, 23, .2);
+  border-radius: 1ex;
 }
 
-:global(body::-webkit-scrollbar) {
-  width: 0.1rem;
-}
-
-:global(body::-webkit-scrollbar-track) {
-  background: var(--background-color);
+::-webkit-scrollbar-track {
+  background-color: rgba(22, 23, 23, .1);
 }
 
 .hidden {

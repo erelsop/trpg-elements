@@ -38,7 +38,7 @@
 
 <style>
   .layout {
-    margin-top: 6rem;
-    padding: 0 2rem;
+    min-height: 100vh;
+    padding: 8rem 0 0 0;
   }
 </style>

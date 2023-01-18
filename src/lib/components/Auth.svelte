@@ -3,6 +3,7 @@
   import { supabase } from '$lib/supabaseClient';
   import logo from '$lib/assets/splash-logo.svg';
   import { goto } from '$app/navigation';
+  import { page } from '$app/stores';
 
   let email: string = '';
   let password: string = '';
@@ -23,7 +24,7 @@
       document
         .getElementById('top-bar')!
         .classList.remove('hidden');
-      goto('/campaigns');
+      goto('/campaigns', { replaceState: false });
     }
   }
 
@@ -38,12 +39,23 @@
         (e: KeyboardEvent) => {
           if (e.key === 'Enter') {
             e.preventDefault();
+            html!.style.overflowY = 'scroll';
             signInWithPassword();
           }
         }
       );
     });
   });
+  let html = document.querySelector('html');
+  html!.style.overflow = 'hidden';
+
+  $: if ($page.data.pathname === '/') {
+    let topbar = document.getElementById('top-bar');
+    topbar?.classList.add('hidden');
+  } else {
+    let topbar = document.getElementById('top-bar');
+    topbar?.classList.remove('hidden');
+  }
 </script>
 
 <div id="login">
@@ -89,18 +101,12 @@
 </div>
 
 <style>
-  :global(body) {
-    overflow: hidden;
-    max-width: 100%;
-  }
-
   #login {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    min-height: 100vh;
-    overflow: hidden;
+    margin-top: -4rem;
   }
 
   .login__logo {

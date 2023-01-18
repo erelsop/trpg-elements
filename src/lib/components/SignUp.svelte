@@ -49,6 +49,7 @@
     </div>
     <div class="signup__btns">
       <input
+        type="button"
         class="secondary-btn"
         value={loading ? 'Loading' : 'Go Back'}
         disabled={loading}
@@ -99,8 +100,9 @@
     font-weight: 700;
     box-shadow: 0 0 6px rgba(22, 23, 23, 0.2);
     text-transform: uppercase;
-    width: 45%;
+    width: 40%;
     cursor: pointer;
+    height: 33px;
   }
   #signup .primary-btn:active {
     background: rgb(103, 151, 134, 0.8);
